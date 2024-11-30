@@ -53,23 +53,21 @@ const LoginPopUp = ({ setShowLogin }) => {
         <p className="mt-4 text-sm">
           {currentState === "Login" ? (
             <>
-              Create a new account?
+              Create a new account?{" "}
               <span
                 onClick={() => setCurrentState("Sign Up")}
                 className="text-red-600 cursor-pointer hover:underline"
               >
-                {" "}
                 Click here
               </span>
             </>
           ) : (
             <>
-              Already have an account?
+              Already have an account?{" "}
               <span
                 onClick={() => setCurrentState("Login")}
                 className="text-red-600 cursor-pointer hover:underline"
               >
-                {" "}
                 Click here
               </span>
             </>

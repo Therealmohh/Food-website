@@ -11,7 +11,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
 
   return (
     <div className="food-item w-full m-auto rounded-lg shadow-lg fade-in">
-      <div className="food-item-img container relative">
+      <div className="food-item-img sm:w-full relative">
         <img
           className="food-item-image lg:w-full sm:w-full md:w-2/3 rounded-lg right object-cover "
           src={image}
@@ -19,7 +19,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
         />
         {!cartItems[id] ? (
           <img
-            className="add absolute bottom-4 w-8 right-4 cursor-pointer rounded-lg sm:-right-38"
+            className="add absolute bottom-4 lg:w-8 right-4 cursor-pointer rounded-lg sm:-right-38"
             onClick={handleAddToCart}
             src={assets.add_icon_white}
             alt=""
@@ -27,14 +27,14 @@ const FoodItem = ({ id, name, price, description, image }) => {
         ) : (
           <div className="food-item-counter absolute bottom-3 right-3 flex items-center gap-2 p-1 rounded-full bg-white">
             <img
-              className="w-5"
+              className="w-7"
               onClick={handleRemoveFromCart}
               src={assets.remove_icon_red}
               alt=""
             />{" "}
-            <p>{cartItems[id]}</p>
+            <p className="text-xl">{cartItems[id]}</p>
             <img
-              className="w-5"
+              className="w-7"
               onClick={handleAddToCart}
               src={assets.add_icon_green}
               alt=""

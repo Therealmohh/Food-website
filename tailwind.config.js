@@ -11,7 +11,6 @@ export default {
         "text-color": "#262626",
         "text-color2": "#808080",
       },
-
       screens: {
         sm: "100px",
         md: "768px",

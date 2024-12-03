@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
+import { StoreContext } from "../../Context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
-
+  const { getTotalCartAmount } = useContext(StoreContext);
   return (
     <div className="navbar py-5 px-0 flex justify-between items-center">
-      <img className="logo w-36 sm:w-28 " src={assets.logo} alt="" />
+      <Link to="/">
+        <img className="logo w-36 sm:w-28 " src={assets.logo} alt="" />
+      </Link>
       <ul className="navbar-menu flex  gap-5 cursor-pointer text-primary-color text-lg sm:hidden xl:flex ">
         <Link
           to="/"
@@ -40,7 +43,7 @@ const Navbar = ({ setShowLogin }) => {
         </a>
         <a
           href="#footer"
-          className={`pb-0 border-b-2 -mb-  ${
+          className={`pb-0 border-b-2   ${
             menu === "contact-us"
               ? "border-secondary-color"
               : "border-transparent"
@@ -53,14 +56,22 @@ const Navbar = ({ setShowLogin }) => {
       <div className="navbar-right flex items-center lg:gap-10 sm:gap-3  ">
         <img src={assets.search_icon} alt="" />
         <div className="navbar-search-icon relative  ">
-          <img src={assets.basket_icon} alt="" />
-          <div className="dot absolute min-w-2 min-h-2 bg-red-500 rounded-md -top-2 left-7 "></div>
+          <Link to="/cart">
+            <img src={assets.basket_icon} alt="" />
+          </Link>
+          <div
+            className={`${
+              getTotalCartAmount() === 0
+                ? ""
+                : "absolute min-w-2 min-h-2 bg-red-500 rounded-md -top-2 left-7"
+            }`}
+          />
         </div>
         <button
           onClick={() => setShowLogin(true)}
           className="navbar-button text-base bg-transparent text-secondary-color border border-red-500 py-2 px-8 rounded-full cursor-pointer duration-300 hover:bg-tertiary-color sm:px-5 sm:py-1.5"
         >
-          sign in
+          Sign in
         </button>
       </div>
     </div>

@@ -18,9 +18,21 @@ const StoreContextProvider = (props) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        let itemInfo = food_list.find((product) => product._id === item);
+        if (itemInfo) {
+          // Check if itemInfo is defined
+          totalAmount += itemInfo.price * cartItems[item];
+        } else {
+          console.warn(`Item with id ${item} not found in food_list`);
+        }
+      }
+    }
+    return totalAmount;
+  };
 
   const contextValue = {
     food_list,
@@ -28,6 +40,7 @@ const StoreContextProvider = (props) => {
     setCartItems,
     addToCart,
     removeFromCart,
+    getTotalCartAmount,
   };
 
   return (

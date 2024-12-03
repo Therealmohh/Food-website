@@ -15,7 +15,7 @@ const Footer = () => {
           <img
             src={assets.logo}
             alt="Company Logo"
-            className="mb-4 w-32 h-auto sm:ml-20"
+            className="mb-4 w-32 h-auto sm:ml-24"
           />
           <p className="text-sm">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis

@@ -1,17 +1,12 @@
 import React, { useContext } from "react";
 import { StoreContext } from "../../Context/StoreContext";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
     useContext(StoreContext);
 
-  //   const subtotal = food_list.reduce((total, item) => {
-  //     return total + item.price * (cartItems[item._id] || 0);
-  //   }, 0);
-
-  //   const deliveryFee = 2;
-  //   const total = subtotal + deliveryFee;
-
+  const navigate = useNavigate();
   return (
     <div className=" mx-auto p-4 sm:text-sm">
       <div className="">
@@ -62,21 +57,24 @@ const Cart = () => {
           <h2 className="text-xl font-semibold mb-2">Cart Totals</h2>
           <div className="cart-total-details flex justify-between py-2">
             <p>Subtotal</p>
-            {/* <p>${subtotal.toFixed(2)}</p> */}
+
             <p>${getTotalCartAmount()}</p>
           </div>
           <div className="cart-total-details flex justify-between py-2">
             <p>Delivery Fee</p>
-            {/* <p>${deliveryFee.toFixed(2)}</p> */}
-            <p>${2}</p>
+
+            <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
           </div>
           <hr className="my-2" />
           <div className="cart-total-details flex justify-between font-bold py-2">
             <p>Total</p>
-            {/* <p>${total.toFixed(2)}</p> */}
-            <p>${getTotalCartAmount() + 2}</p>
+
+            <p>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</p>
           </div>
-          <button className="bg-red-500 text-white py-2 px-4 rounded mt-2 w-full">
+          <button
+            onClick={() => navigate("/order")}
+            className="bg-red-500 text-white py-2 px-4 rounded mt-2 w-full"
+          >
             PROCEED TO CHECKOUT
           </button>
         </div>

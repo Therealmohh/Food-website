@@ -84,11 +84,11 @@ export const assets = {
 
 export const menu_list = [
   {
-    menu_name: "Salad",
-    menu_image: menu_1,
+    menu_name: "Swallow",
+    menu_image: food_1,
   },
   {
-    menu_name: "Rolls",
+    menu_name: "Shawarma",
     menu_image: menu_2,
   },
   {
@@ -104,12 +104,12 @@ export const menu_list = [
     menu_image: menu_5,
   },
   {
-    menu_name: "Pure Veg",
-    menu_image: menu_6,
+    menu_name: "Stew",
+    menu_image: food_21,
   },
   {
     menu_name: "Pasta",
-    menu_image: menu_7,
+    menu_image: food_27,
   },
   {
     menu_name: "Noodles",
@@ -120,75 +120,75 @@ export const menu_list = [
 export const food_list = [
   {
     _id: "1",
-    name: "Greek salad",
+    name: "Amala",
     image: food_1,
     price: 12,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
+    category: "Swallow",
   },
   {
     _id: "2",
-    name: "Veg salad",
+    name: "Eba",
     image: food_2,
     price: 18,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
+    category: "Swallow",
   },
   {
     _id: "3",
-    name: "Clover Salad",
+    name: "Semo",
     image: food_3,
     price: 16,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
+    category: "Swallow",
   },
   {
     _id: "4",
-    name: "Chicken Salad",
+    name: "Pounded yam",
     image: food_4,
     price: 24,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
+    category: "Swallow",
   },
   {
     _id: "5",
-    name: "Lasagna Rolls",
-    image: food_5,
+    name: "Beef Shawarma",
+    image: menu_2,
     price: 14,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+    category: "Shawarma",
   },
   {
     _id: "6",
-    name: "Peri Peri Rolls",
+    name: "Shawarma Peri Peri",
     image: food_6,
     price: 12,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+    category: "Shawarma",
   },
   {
     _id: "7",
-    name: "Chicken Rolls",
+    name: "Chicken Shawarma",
     image: food_7,
     price: 20,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+    category: "Shawarma",
   },
   {
     _id: "8",
-    name: "Veg Rolls",
+    name: "Veg Shawarma",
     image: food_8,
     price: 15,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+    category: "Shawarma",
   },
   {
     _id: "9",
@@ -300,43 +300,43 @@ export const food_list = [
   },
   {
     _id: "21",
-    name: "Garlic Mushroom ",
+    name: "Beef Stew ",
     image: food_21,
     price: 14,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Pure Veg",
+    category: "Stew",
   },
   {
     _id: "22",
-    name: "Fried Cauliflower",
+    name: "Egusi",
     image: food_22,
     price: 22,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Pure Veg",
+    category: "Stew",
   },
   {
     _id: "23",
-    name: "Mix Veg Pulao",
+    name: "Efo",
     image: food_23,
     price: 10,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Pure Veg",
+    category: "Stew",
   },
   {
     _id: "24",
-    name: "Rice Zucchini",
+    name: "Ewedu",
     image: food_24,
     price: 12,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Pure Veg",
+    category: "Stew",
   },
   {
     _id: "25",
-    name: "Cheese Pasta",
+    name: "Beef Stir fry Pasta",
     image: food_25,
     price: 12,
     description:
@@ -345,7 +345,7 @@ export const food_list = [
   },
   {
     _id: "26",
-    name: "Tomato Pasta",
+    name: "Jollof Pasta",
     image: food_26,
     price: 18,
     description:
@@ -354,7 +354,7 @@ export const food_list = [
   },
   {
     _id: "27",
-    name: "Creamy Pasta",
+    name: "Chicken Stir Pasta",
     image: food_27,
     price: 16,
     description:
@@ -363,7 +363,7 @@ export const food_list = [
   },
   {
     _id: "28",
-    name: "Chicken Pasta",
+    name: "Plain Pasta",
     image: food_28,
     price: 24,
     description:

@@ -3,13 +3,13 @@ import React from "react";
 const Header = () => {
   return (
     <div
-      className="header"
+      className="header h-screen"
       style={{
         backgroundImage: `url('/header_img.png')`,
         backgroundSize: "cover ",
         backgroundRepeat: "no-repeat",
         position: "relative",
-        height: "34vw",
+        height: "48vw",
         margin: "30px auto",
         padding: "",
       }}

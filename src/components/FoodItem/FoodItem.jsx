@@ -13,7 +13,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
     <div className="food-item w-full m-auto rounded-lg shadow-lg fade-in">
       <div className="food-item-img sm:w-full relative">
         <img
-          className="food-item-image lg:w-full sm:w-full md:w-2/3 rounded-lg right object-cover "
+          className="food-item-image lg:w-full sm:w-full md:w-2/3 rounded-lg right object-cover h-64"
           src={image}
           alt=""
         />

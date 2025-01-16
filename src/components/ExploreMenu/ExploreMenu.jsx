@@ -24,16 +24,6 @@ const ExploreMenu = ({ category, setCategory }) => {
               key={index}
               className="explore-menu-list-item lg:w-36 sm:w-1/5"
             >
-              {/* <img
-                className={` cursor-pointer transition duration-2000 w-full lg:h-36 lg:w-full sm:h-56 sm:w-full object-cover rounded-full ${
-                  category === item.menu_name
-                    ? "border-4 border-green-500 p-1"
-                    : ""
-                }`}
-                src={item.menu_image}
-                alt=""
-              /> */}
-
               <img
                 className={`cursor-pointer transition duration-2000 w-full lg:h-36 sm:h-20 sm:w-full object-cover rounded-full ${
                   category === item.menu_name

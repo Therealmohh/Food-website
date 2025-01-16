@@ -1,12 +1,46 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
-
+import { StoreContext } from "../../Context/StoreContext";
+import axios from "axios";
 const LoginPopUp = ({ setShowLogin }) => {
-  const [currentState, setCurrentState] = useState("Sign Up");
+  const { url, setToken } = useContext(StoreContext);
 
+  const [currentState, setCurrentState] = useState("Login");
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const onChangeHandler = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setData((data) => ({ ...data, [name]: value }));
+  };
+  const onLogin = async (event) => {
+    event.preventDefault();
+    let newUrl = url;
+    if (currentState === "Login") {
+      newUrl += "/api/user/login";
+    } else {
+      newUrl += "/api/user/register";
+    }
+
+    const response = await axios.post(newUrl, data);
+
+    if (response.data.success) {
+      setToken(response.data.token);
+      localStorage.setItem("token", response.data.token);
+      setShowLogin(false);
+    } else {
+      alert(response.data.message);
+    }
+  };
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <form className="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-sm">
+      <form
+        onSubmit={onLogin}
+        className="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-sm"
+      >
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold">{currentState}</h2>
           <img
@@ -19,6 +53,9 @@ const LoginPopUp = ({ setShowLogin }) => {
         <div className="space-y-4">
           {currentState === "Login" ? null : (
             <input
+              name="name"
+              onChange={onChangeHandler}
+              value={data.name}
               type="text"
               placeholder="Your name"
               required
@@ -26,12 +63,18 @@ const LoginPopUp = ({ setShowLogin }) => {
             />
           )}
           <input
+            name="email"
+            onChange={onChangeHandler}
+            value={data.email}
             type="email"
             placeholder="Your email"
             required
             className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-red-300"
           />
           <input
+            name="password"
+            onChange={onChangeHandler}
+            value={data.password}
             type="password"
             placeholder="Password"
             required
